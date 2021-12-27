@@ -1,0 +1,10 @@
+name: MFCrafting
+author: guillelego
+version: 1.0
+main: guillec.mfcrafting.MFCrafting
+
+commands:
+  mfcrafting:
+    usage: /<command>
+    description: Muestra tus suministros
+    permission: mfcr.command

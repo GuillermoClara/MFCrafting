@@ -1,0 +1,7 @@
+craft_item_slot: 0
+craft_item_menu: "container.crafting"
+workbench_id: "CONCRETE:10"
+default_type: "defecto"
+workbench_shows_All: true
+show_default: true
+blocked_worlds: []
