@@ -33,8 +33,6 @@ public class InventoryListener implements Listener {
 
     @EventHandler
     public void onClick(InventoryClickEvent e){
-        System.out.println(e.getInventory().getTitle());
-        System.out.println(e.getSlot());
 
         if(e.getWhoClicked().getGameMode()== GameMode.CREATIVE)
             return;
@@ -52,14 +50,6 @@ public class InventoryListener implements Listener {
 
                 if(slot == this.plugin.getConfig().getInt("craft_item_slot")){
 
-                    ItemStack selectedItemStack = e.getInventory().getItem(slot);
-                    if(selectedItemStack!=null){
-                        System.out.println("Nulo");
-                        return;
-                    } else {
-                        System.out.println("Not nulo");
-                    }
-
                     GuiManager.generateMainMenu(player,0,this.plugin);
                     e.setCancelled(true);
                 }
@@ -76,7 +66,7 @@ public class InventoryListener implements Listener {
 
 
 
-                System.out.println("Slot seleccionado: "+slot);
+
                 ItemStack itemStack;
                 try{
                     itemStack = e.getInventory().getItem(slot);
@@ -341,7 +331,6 @@ public class InventoryListener implements Listener {
                         if(e.getClick()==ClickType.LEFT){
 
                             String displayName = selectedItem.getItemMeta().getDisplayName();
-                            System.out.println(displayName);
                             int index = Integer.parseInt(displayName.substring(displayName.lastIndexOf(" ")+1));
                             HashMap<String,Integer> recipeViewing = item.getRecipes().get(index-1);
 
@@ -437,10 +426,8 @@ public class InventoryListener implements Listener {
     @EventHandler
     public void onItemDrag(InventoryDragEvent e){
 
-        System.out.println(e.getInventorySlots().toString());
 
         if(e.getInventorySlots().contains(this.plugin.getConfig().getInt("craft_item_slot"))){
-            System.out.println("Cancelado");
             e.setCancelled(true);
         }
 
@@ -505,7 +492,6 @@ public class InventoryListener implements Listener {
             return false;
 
         String identifier = block.getType().toString()+":"+block.getData();
-        System.out.println(identifier);
         return identifier.equals(this.plugin.getConfig().getString("workbench_id"));
     }
 

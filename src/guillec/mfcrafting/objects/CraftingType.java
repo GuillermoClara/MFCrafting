@@ -14,7 +14,7 @@ public class CraftingType {
     private List<CustomItem> items = new ArrayList<>();
     private CustomItem icon;
     private String name;
-    private MFile file;
+    private final MFile file;
 
     public CraftingType(MFile file, String name){
 

@@ -59,7 +59,7 @@ public class VariedTools {
 
     public static int getRequiredRows(int size){
 
-        int rows = 0;
+        int rows;
         if(size<=9)
             rows = 9;
         else if(size<=18)

@@ -106,7 +106,6 @@ public class CustomItem implements ConfigurationSerializable {
 
 
             }
-            System.out.println("Tamano de receta individual: "+recipeMap.size());
             result.add(recipeMap);
 
 
@@ -159,7 +158,6 @@ public class CustomItem implements ConfigurationSerializable {
                     String name = lang.getString("blocks."+entry.getKey());
                     if(name == null){
                         name = itemStack.getType().toString();
-                        System.out.println("Item nulo");
                     }
 
 
@@ -217,7 +215,6 @@ public class CustomItem implements ConfigurationSerializable {
             result.add(requirement);
 
         }
-        System.out.println(result.size());
         return result;
 
     }
